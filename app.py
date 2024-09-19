@@ -353,5 +353,5 @@ def update_topic_modeling(selected_date):
     return html.Iframe(srcDoc=vis_html, width='100%', height='800px')
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=False)
     
