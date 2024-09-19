@@ -23,10 +23,10 @@ df['Date'] = pd.to_datetime(df['Date'])
 df_twse = pd.read_csv('./data/merged_taiex_data.csv')
 
 # 資料的確認
-print("原始資料：")
-print(df_twse.head())
-print(df_twse.dtypes)
-print(df_twse.isnull().sum())
+# print("原始資料：")
+# print(df_twse.head())
+# print(df_twse.dtypes)
+# print(df_twse.isnull().sum())
 
 # 日期轉換
 df_twse['Date'] = pd.to_datetime(df_twse['Date'], errors='coerce')
@@ -40,10 +40,10 @@ for col in numeric_columns:
 df_twse = df_twse.dropna(subset=['Date'] + numeric_columns)
 
 # 資料的再確認
-print("\n處理後的資料：")
-print(df_twse.head())
-print(df_twse.dtypes)
-print(df_twse.isnull().sum())
+# print("\n處理後的資料：")
+# print(df_twse.head())
+# print(df_twse.dtypes)
+# print(df_twse.isnull().sum())
 
 # 日期排序
 df_twse = df_twse.sort_values('Date')
@@ -65,7 +65,10 @@ fig.update_layout(
 
 # 設定視覺主題
 external_stylesheets = [dbc.themes.FLATLY]
+
+# 設定app與server實體
 app = Dash(__name__, external_stylesheets=external_stylesheets)
+server = app.server
 
 # 自訂CSS
 app.index_string = '''
@@ -354,4 +357,3 @@ def update_topic_modeling(selected_date):
 
 if __name__ == '__main__':
     app.run(debug=False)
-    

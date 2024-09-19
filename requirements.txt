@@ -13,6 +13,7 @@ Flask==3.0.3
 fonttools==4.53.1
 funcy==2.0
 gensim==4.3.3
+gunicorn==23.0.0
 idna==3.7
 importlib_metadata==8.2.0
 itsdangerous==2.2.0
